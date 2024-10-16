@@ -1,8 +1,13 @@
 const router = require('express').Router();
+const mongodb = require("../database/db.js")
 
 router.get('/', (req, res) => {
   res.send('Hello World!');
 })
+
+//connect database
+router.use("/data", require("../database/db.js"));
+
 
 router.get('/auth', (req, res) => {
   res.send('Replace with auth route');
