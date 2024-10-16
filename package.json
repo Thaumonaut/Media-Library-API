@@ -1,0 +1,27 @@
+{
+  "name": "media-library-api",
+  "version": "1.0.0",
+  "description": "Group final project for CSE 341",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "swagger": "node ./middleware/swagger.js",
+    "start": "npm run swagger && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "mongoose": "^8.7.1",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
