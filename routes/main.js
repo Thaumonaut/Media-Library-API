@@ -29,4 +29,12 @@ router.get('/games', (req, res) => {
   res.send('Replace with games route');
 })
 
+
+//init db
+mongodb.initDb((err) => {
+  if (!err) {
+    console.log("Database initialized");
+  }
+});
+
 module.exports = router
