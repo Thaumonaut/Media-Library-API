@@ -1,6 +1,8 @@
 # Media-Library-API
 Group final project for CSE 341
 
+To get started run `npm install` to install all the dependencies. Then run `npm run dev' to start the development environment.
+
 ## Database Schema
 ### Movie:
 -	_id : ObjectId
