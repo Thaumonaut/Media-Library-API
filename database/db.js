@@ -1,11 +1,10 @@
 const mongoose = require( "mongoose");
+require("dotenv").config()
 
 async function connectDb(){
     const mongoUrl = (process.env.MONGODB_URL);
     try {
         await mongoose.connect(mongoUrl, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
             serverSelectionTimeoutMS: 30000,
         });
 
@@ -13,7 +12,7 @@ async function connectDb(){
     } catch (err){
         console.log('Error connecting to MongoDB:', err.message);
     }
-    
+
 }
 
 async function disconnectDb(){
@@ -21,7 +20,8 @@ async function disconnectDb(){
         await mongoose.disconnect();
         console.log('MongoDB disconnected!');
     } catch (err) {
-        console.error('Error disconnecting from MongoDB:', err.message);
+        err.message,
+        console.error('Error disconnecting from MongoDB:');
     }
 }
 
