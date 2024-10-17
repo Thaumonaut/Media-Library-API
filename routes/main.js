@@ -12,9 +12,7 @@ router.get('/movies', (req, res) => {
   res.send('Replace with movies route');
 })
 
-router.get('/books', (req, res) => {
-  res.send('Replace with books route');
-})
+router.use('/books', require('./books'))
 
 router.get('/music', (req, res) => {
   res.send('Replace with music route');
