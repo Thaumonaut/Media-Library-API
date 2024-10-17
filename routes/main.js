@@ -12,11 +12,12 @@ router.get('/movies', (req, res) => {
   res.send('Replace with movies route');
 })
 
-router.use('/books', require('./books'))
-
-router.get('/music', (req, res) => {
-  res.send('Replace with music route');
+router.get('/books', (req, res) => {
+  res.send('Replace with books route');
 })
+
+router.use('/music', require('./music')//#swagger.tags=['Music']
+)
 
 router.get('/games', (req, res) => {
   res.send('Replace with games route');
