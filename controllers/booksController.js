@@ -1,4 +1,4 @@
-const Book = require('../middleware/bookSchema');
+const Book = require('../database/bookSchema');
 
 const addBook = async (req, res) => {
     //#swagger.tags=['Books']

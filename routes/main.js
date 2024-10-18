@@ -10,10 +10,6 @@ router.get('/', (req, res) => {
 
 router.use("/api-docs", SwaggerUI.serve, SwaggerUI.setup(swagggerDocument))
 
-router.get('/auth', (req, res) => {
-  res.send('Replace with auth route');
-})
-
 router.get('/movies', (req, res) => {
   res.send('Replace with movies route');
 })

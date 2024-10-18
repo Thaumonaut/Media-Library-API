@@ -5,7 +5,7 @@
     "description": "Search through your favorite media with a simple to use REST API.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "http",
@@ -13,16 +13,6 @@
   ],
   "paths": {
     "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth": {
       "get": {
         "description": "",
         "responses": {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {getAll, getSingle, addBook, updateBook, deleteBook } = require("../controllers/books.js");
-const booksValidator = require("../middleware/books.js");
+const {getAll, getSingle, addBook, updateBook, deleteBook } = require("../controllers/booksController.js");
+const booksValidator = require("../middleware/booksValidation.js");
 
 router.get("/", getAll);
 
