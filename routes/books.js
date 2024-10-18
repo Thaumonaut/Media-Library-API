@@ -1,21 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const booksController = require("../controllers/books.js");
+const {getAll, getSingle, addBook, updateBook, deleteBook } = require("../controllers/books.js");
 const booksValidator = require("../middleware/books.js");
 
-router.get('/', booksController.getAll);
-router.get('/:id', booksController.getSingle)
+router.get("/", getAll);
+
+router.get('/:id', getSingle);
+
 
 router.post('/', 
     booksValidator.validateAddBook,
     booksValidator.checkValidation,
-    booksController.addBook);
+    addBook);
 
 router.put('/:id', 
     booksValidator.validateUpdateBook,
     booksValidator.checkValidation,
-    booksController.updateBook);
+    updateBook);
 
-    router.delete('/:id', booksController.deleteBook);
+    router.delete('/:id', deleteBook);
 
 module.exports = router;

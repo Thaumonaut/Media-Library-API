@@ -2,10 +2,10 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'Books and Readers Api',
-        description: 'Books and REaders Api'
+        title: 'Media Library Api',
+        description: 'Search through your favorite media with a simple to use REST API.',
     },
-    host: 'localhost:5000',
+    host: process.env.NODE_ENV == "production" ? 'media-library-api-hjxz.onrender.com/' : `localhost:${process.env.PORT || 3000}`,
     schemes: ['http', 'https']
 };
 

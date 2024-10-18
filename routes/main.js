@@ -1,8 +1,14 @@
 const router = require('express').Router();
 
+// Swagger Imports
+const SwaggerUI = require('swagger-ui-express')
+const swagggerDocument = require('../middleware/swagger.json')
+
 router.get('/', (req, res) => {
   res.send('Hello World!');
 })
+
+router.use("/api-docs", SwaggerUI.serve, SwaggerUI.setup(swagggerDocument))
 
 router.get('/auth', (req, res) => {
   res.send('Replace with auth route');
@@ -12,9 +18,7 @@ router.get('/movies', (req, res) => {
   res.send('Replace with movies route');
 })
 
-router.get('/books', (req, res) => {
-  res.send('Replace with books route');
-})
+router.use('/books', require('./books'))//#swagger.tags=['Books']
 
 router.use('/music', require('./music')//#swagger.tags=['Music']
 )
