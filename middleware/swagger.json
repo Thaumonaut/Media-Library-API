@@ -21,16 +21,6 @@
         }
       }
     },
-    "/auth": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/movies": {
       "get": {
         "description": "",

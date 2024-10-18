@@ -1,4 +1,4 @@
-const Music = require('../middleware/musicSchema')
+const Music = require('../database/musicSchema')
 
 const getAll = async (req, res) => {
     try{
