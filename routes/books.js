@@ -18,6 +18,6 @@ router.put('/:id',
     booksValidator.checkValidation,
     updateBook);
 
-    router.delete('/:id', deleteBook);
+router.delete('/:id', deleteBook);
 
 module.exports = router;

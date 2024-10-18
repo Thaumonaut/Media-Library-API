@@ -2,6 +2,7 @@ const Book = require('../middleware/bookSchema');
 
 const addBook = async (req, res) => {
     //#swagger.tags=['Books']
+    const { title, author, description, releaseYear, pages, ISBN10, ISBN13 } = req.body;
     try {
         const newBook = new Book(req.body); 
         // here is wher mongoose will make its validation
@@ -16,6 +17,7 @@ const addBook = async (req, res) => {
 
 const updateBook = async (req, res) =>{
     //#swagger.tags=['Books']
+    const { title, author, description, releaseYear, pages, ISBN10, ISBN13 } = req.body;
     try {
         const updatedBook = await Book.findByIdAndUpdate(
             req.params.id,
