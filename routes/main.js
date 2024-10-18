@@ -6,8 +6,6 @@ router.get('/', (req, res) => {
 })
 
 
-
-
 router.get('/auth', (req, res) => {
   res.send('Replace with auth route');
 })
@@ -25,8 +23,6 @@ router.get('/music', (req, res) => {
 router.get('/games', (req, res) => {
   res.send('Replace with games route');
 })
-
-
 
 
 module.exports = router
