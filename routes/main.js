@@ -12,9 +12,7 @@ router.get('/auth', (req, res) => {
   res.send('Replace with auth route');
 })
 
-router.get('/movies', (req, res) => {
-  res.send('Replace with movies route');
-})
+router.use('/movies', require('./movies'))
 
 router.get('/books', (req, res) => {
   res.send('Replace with books route');
@@ -29,11 +27,6 @@ router.get('/games', (req, res) => {
 })
 
 
-//init db
-mongodb.initDb((err) => {
-  if (!err) {
-    console.log("Database initialized");
-  }
-});
+
 
 module.exports = router

@@ -1,34 +1,35 @@
-const dotenv = require('dotenv');
-dotenv.config();
-const mongodb = require('mongodb').MongoClient;
+const mongoose = require( "mongoose");
+require("dotenv").config()
 
-const { MongoClient } = require('mongodb');
+async function connectDb(){
+    const mongoUrl = (process.env.MONGODB_URL);
+    console.log(mongoUrl)
+    try {
+        await mongoose.connect(mongoUrl, {
+            serverSelectionTimeoutMS: 30000,
+        });
 
-let database
-
-const initDb = (callback) => {
-    if (database) {
-        console.log('Db already initialized')
-        return callback(null, database)
+        console.log('MongoDB Atlas connected!')
+    } catch (err){
+        console.log('Error connecting to MongoDB:', err.message);
     }
-    MongoClient.connect(process.env.DB_URL)
-        .then((client) => {
-            database = client;
-            callback(null, database)
-        })
-        .catch((err) => {
-            callback(err, null)
-        })
+
 }
 
-const getDatabase = () => {
-    if(!database) {
-        throw Error('Db not initialized')
+async function disconnectDb(){
+    try {
+        await mongoose.disconnect();
+        console.log('MongoDB disconnected!');
+    } catch (err) {
+        err.message,
+        console.error('Error disconnecting from MongoDB:');
     }
-    return database
 }
 
-module.exports = {
-    initDb,
-    getDatabase
-}
+//automatically disconnect on application termination
+process.on('SIGINT', async () => {
+    await disconnectDb();
+    process.exit(0);
+});
+
+module.exports = { connectDb, disconnectDb };

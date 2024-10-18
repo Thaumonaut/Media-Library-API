@@ -1,0 +1,9 @@
+GET /movies HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+[{"_id":"5f8a5f39f8a5f39f8a5f39","title":"Movie Test","releaseDate":"2020-10-20T00:00:00.000Z","description":"Movie description","director":"Movie Director","studio":"Movie Studio","cast":["Movie Cast 1","Movie Cast 2"],"genre":"Movie Genre","rating":8.5,"duration":120,"__v":0}]
+
