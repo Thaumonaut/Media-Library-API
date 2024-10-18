@@ -5,10 +5,9 @@
     "description": "Search through your favorite media with a simple to use REST API.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "media-library-api-hjxz.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
@@ -72,6 +71,38 @@
           "Books"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "pages": {
+                  "example": "any"
+                },
+                "ISBN10": {
+                  "example": "any"
+                },
+                "ISBN13": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -122,6 +153,36 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "pages": {
+                  "example": "any"
+                },
+                "ISBN10": {
+                  "example": "any"
+                },
+                "ISBN13": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
