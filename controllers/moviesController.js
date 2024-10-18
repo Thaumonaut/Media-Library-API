@@ -1,4 +1,4 @@
-const Movie = require('../middleware/movieschema');
+const Movie = require('../database/movieSchema');
 
 
 const getMovies = async (req, res) => {
