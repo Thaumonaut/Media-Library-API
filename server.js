@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
 const { connectDb } = require('./database/db.js');
 
 // Require Environment Variables
@@ -20,7 +19,6 @@ connectDb().then(() => {
   console.log('Failed to connect to the database', err.message);
 });
 
-// Set Port
 const port = process.env.PORT || 3000;
 
 // Start Server

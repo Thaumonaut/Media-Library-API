@@ -8,7 +8,7 @@ async function connectDb(){
             serverSelectionTimeoutMS: 30000,
         });
 
-        console.log('MongoDB Atlas connected!')
+        console.log('MongoDB connected!')
     } catch (err){
         console.log('Error connecting to MongoDB:', err.message);
     }
