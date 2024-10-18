@@ -12,3 +12,5 @@ const movieSchema = new mongoose.Schema({
     duration: Number,
     rating: String
 });
+
+module.exports = mongoose.model('Movie', movieSchema)
