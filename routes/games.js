@@ -3,7 +3,7 @@ const { createGame, getAllGames, getGameById, updateGameById, deleteGameById } =
 const { gameValidationRules, checkValidation } = require('../middleware/gamesValidation.js');
 
 // Create a new game
-router.post('/:id', gameValidationRules, checkValidation, createGame);
+router.post('/', gameValidationRules, checkValidation, createGame);
  
 // Get all games
 router.get('/', getAllGames);
