@@ -21,16 +21,19 @@ const getSingleMovie = async (req, res) => {
 }
 
 const createMovie = async (req, res) => {
-    const movie = new Movie(req.body);
+    const { title, releaseDate, description, director, studio,cast, genre, rating,duration,} = req.body;
     try {
-        const newMovie = await movie.save();
-        res.status(201).json(newMovie);
+        const newMovie = new Movie(req.body);
+
+        await newMovie.save
+        res.status(201).json({ message: 'Movie created successfully', newMovie});
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 }
 
 const updateMovie = async (req, res) => {
+    const { title, releaseDate, description, director, studio,cast, genre, rating,duration,} = req.body;
     try {
         const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.json(updatedMovie);
