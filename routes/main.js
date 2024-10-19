@@ -11,7 +11,8 @@ router.get('/', (req, res) => {
 
 router.use("/api-docs", SwaggerUI.serve, SwaggerUI.setup(swagggerDocument))
 
-router.use('/movies', require('./movies'))
+router.use('/movies', require('./movies')//#swagger.tags=['Movies']
+)
 
 router.use('/books', require('./books'))//#swagger.tags=['Books']
 
@@ -19,7 +20,7 @@ router.use('/music', require('./music')//#swagger.tags=['Music']
 )
 
 router.get('/games', (req, res) => {
-  res.send('Replace with games route');
+  res.send('Replace with games route')//#swagger.tags=['Games']
 })
 
 
