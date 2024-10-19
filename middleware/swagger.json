@@ -33,7 +33,8 @@
       }
     },
     "/movies/": {
-      "get": {"tags": [
+      "get": {
+        "tags": [
           "Movies"
         ],
         "description": "",
@@ -46,7 +47,8 @@
           }
         }
       },
-      "post": { "tags": [
+      "post": {
+        "tags": [
           "Movies"
         ],
         "description": "",
@@ -61,7 +63,8 @@
       }
     },
     "/movies/{id}": {
-      "get": {"tags": [
+      "get": {
+        "tags": [
           "Movies"
         ],
         "description": "",
@@ -82,7 +85,8 @@
           }
         }
       },
-      "put": {"tags": [
+      "put": {
+        "tags": [
           "Movies"
         ],
         "description": "",
@@ -103,7 +107,8 @@
           }
         }
       },
-      "delete": {"tags": [
+      "delete": {
+        "tags": [
           "Movies"
         ],
         "description": "",
