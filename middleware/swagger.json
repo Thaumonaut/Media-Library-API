@@ -37,9 +37,6 @@
     },
     "/movies/": {
       "get": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
         "responses": {
           "200": {
@@ -51,9 +48,6 @@
         }
       },
       "post": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
         "responses": {
           "201": {
@@ -67,9 +61,6 @@
     },
     "/movies/{id}": {
       "get": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
         "parameters": [
           {
@@ -89,9 +80,6 @@
         }
       },
       "put": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
         "parameters": [
           {
@@ -111,9 +99,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
         "parameters": [
           {
