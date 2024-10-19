@@ -21,20 +21,37 @@ const getSingleMovie = async (req, res) => {
 }
 
 const createMovie = async (req, res) => {
-    const { title, releaseDate, description,
+    const { title, releaseDate, description, director, studio, cast, genre, rating, duration } = req.body;
+
+    if (!title || !releaseDate || !description || !director || !studio || !cast || !genre || !rating || !duration) {
+        return res.status(400).json({
+            message: "All fields are required: title, releaseDate, description, director, studio, cast, genre, rating, duration"
+        });
+    }
+
+    const newMovie = new Movie({
+        title,
+        releaseDate,
+        description,
         director,
         studio,
         cast,
         genre,
         rating,
-        duration,} = req.body;
-    try {
-        const newMovie = new Movie(req.body);
+        duration
+    });
 
-        await newMovie.save
-        res.status(201).json(newMovie);
+    try {
+        await newMovie.save();
+        return res.status(201).json({
+            message: "Movie created successfully",
+            movieId: newMovie._id
+        });
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        return res.status(500).json({
+            message: "Failed to add movie",
+            error: err.message
+        });
     }
 }
 
