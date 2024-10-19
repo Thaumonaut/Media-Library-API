@@ -33,7 +33,9 @@
       }
     },
     "/movies/": {
-      "get": {
+      "get": {"tags": [
+          "Movies"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -44,7 +46,9 @@
           }
         }
       },
-      "post": {
+      "post": { "tags": [
+          "Movies"
+        ],
         "description": "",
         "responses": {
           "201": {
@@ -57,7 +61,9 @@
       }
     },
     "/movies/{id}": {
-      "get": {
+      "get": {"tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
@@ -76,7 +82,9 @@
           }
         }
       },
-      "put": {
+      "put": {"tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
@@ -95,7 +103,9 @@
           }
         }
       },
-      "delete": {
+      "delete": {"tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {

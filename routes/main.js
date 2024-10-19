@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.use("/api-docs", SwaggerUI.serve, SwaggerUI.setup(swagggerDocument))
 
-router.use('/movies', require('./movies'))
+router.use('/movies', require('./movies'))//#swagger.tags=['Movies']
 
 router.use('/books', require('./books'))//#swagger.tags=['Books']
 
