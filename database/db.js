@@ -3,13 +3,12 @@ require("dotenv").config()
 
 async function connectDb(){
     const mongoUrl = (process.env.MONGODB_URL);
-    console.log(mongoUrl)
     try {
         await mongoose.connect(mongoUrl, {
             serverSelectionTimeoutMS: 30000,
         });
 
-        console.log('MongoDB Atlas connected!')
+        console.log('MongoDB connected!')
     } catch (err){
         console.log('Error connecting to MongoDB:', err.message);
     }

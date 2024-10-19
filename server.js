@@ -4,11 +4,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { connectDb } = require('./database/db.js');
 
+// Require Environment Variables
+require("dotenv").config()
+
+// Use Statements
 app.use(cors());
 app.use(bodyParser.json());
-
 app.use('/', require('./routes/main'));
-
 
 // Database Connection
 connectDb().then(() => {
@@ -17,9 +19,9 @@ connectDb().then(() => {
   console.log('Failed to connect to the database', err.message);
 });
 
-
 const port = process.env.PORT || 3000;
 
+// Start Server
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 })
