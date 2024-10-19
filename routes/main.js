@@ -20,7 +20,7 @@ router.use('/music', require('./music')//#swagger.tags=['Music']
 )
 
 router.get('/games', (req, res) => {
-  res.send('Replace with games route');
+  res.send('Replace with games route')//#swagger.tags=['Games']
 })
 
 

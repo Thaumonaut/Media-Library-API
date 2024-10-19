@@ -24,6 +24,9 @@
     },
     "/games": {
       "get": {
+        "tags": [
+          "Games"
+        ],
         "description": "",
         "responses": {
           "200": {
