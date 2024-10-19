@@ -39,6 +39,7 @@ const createMovie = async (req, res) => {
 }
 
 const updateMovie = async (req, res) => {
+    const { title, releaseDate, description, director, studio,cast, genre, rating,duration,} = req.body;
     try {
         const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.json(updatedMovie);
