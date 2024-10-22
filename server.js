@@ -32,7 +32,7 @@ app.use(auth({
   //   return {
   //     ...session
   //   }
-  // }vvvvvvv
+  // }
 }));
 
 app.use('/', require('./routes/main'));

@@ -1,3 +1,5 @@
+const { auth } = require('express-openid-connect');
+
 const swaggerAutogen = require('swagger-autogen')();
 require('dotenv').config();
 

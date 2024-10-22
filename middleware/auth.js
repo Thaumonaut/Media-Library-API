@@ -15,7 +15,6 @@ const jwtAuth = jwt({
 });
 
 const checkAuth = (req, res, next) => {
-  console.log(req.headers);
   if(req.appSession.access_token) {
     req.headers["authorization"] = `Bearer ${req.appSession.access_token}`;
   }
