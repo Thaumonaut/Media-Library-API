@@ -1,3 +1,5 @@
+const { auth } = require('express-openid-connect');
+
 const swaggerAutogen = require('swagger-autogen')();
 require('dotenv').config();
 
@@ -7,7 +9,17 @@ const doc = {
         description: 'Search through your favorite media with a simple to use REST API.',
     },
     host: process.env.NODE_ENV == "production" ? 'media-library-api-hjxz.onrender.com' : `localhost:${process.env.PORT || 3000}`,
-    schemes: ['http', 'https']
+    schemes: process.env.NODE_ENV == "production" ? ['https'] : ['http'],
+    securityDefinitions: {
+        auth0: {
+            type: "oauth2",
+            flow: "implicit",
+            in: "header",
+            name: "Authorization",
+            authorizationUrl: process.env.ISSUER + "/authorize?audience=https://library.media.com",
+            tokenUrl: process.env.ISSUER + "/oauth/token?audience=https://library.media.com",
+        }
+    }
 };
 
 const outputFile = "./swagger.json";
