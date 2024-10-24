@@ -45,7 +45,7 @@ connectDb().then(() => {
 });
 
 const port = process.env.PORT || 3000;
-const host = process.env.NODE_ENV == "production" ? 'https://media-library-api-hjxz.onrender.com' : `http://localhost:${process.env.PORT || 3000}`
+const host = process.env.NODE_ENV == "production" ? process.env.BASE_URL : `http://localhost:${process.env.PORT || 3000}`
 
 // Start Server
 app.listen(port, () => {

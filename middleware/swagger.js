@@ -8,7 +8,7 @@ const doc = {
         title: 'Media Library Api',
         description: 'Search through your favorite media with a simple to use REST API.',
     },
-    host: process.env.NODE_ENV == "production" ? 'media-library-api-hjxz.onrender.com' : `localhost:${process.env.PORT || 3000}`,
+    host: process.env.NODE_ENV == "production" ? process.env.BASE_URL : `localhost:${process.env.PORT || 3000}`,
     schemes: process.env.NODE_ENV == "production" ? ['https'] : ['http'],
     securityDefinitions: {
         auth0: {

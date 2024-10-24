@@ -6,7 +6,7 @@ const SwaggerUI = require('swagger-ui-express')
 const swagggerDocument = require('../middleware/swagger.json');
 const { checkAuth, ErrorHandler } = require('../middleware/auth.js');
 
-const host = process.env.NODE_ENV == "production" ? 'https://media-library-api-hjxz.onrender.com' : `http://localhost:${process.env.PORT || 3000}`
+const host = process.env.NODE_ENV == "production" ? process.env.BASE_URL : `http://localhost:${process.env.PORT || 3000}`
 
 router.get('/', (req, res) => {
   /* #swagger.ignore = true */
