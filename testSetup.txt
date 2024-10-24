@@ -1,0 +1,19 @@
+Setup dependencies
+
+npm install --save-dev jest
+npm instal --save-dev supertest
+npm install --save-dev @shelf/jest-mongodb
+
+
+Folder __tests__ :
+
+folder to add files with the following format "example.test.js"
+For example, if you wanna test information about books route you might write : booksRoutes.test.js
+Here, we are going to import functions from src files to compose our tests files.
+
+
+Folder src :
+
+Folder where we can put files with functions that will be used in __tests__ files.
+
+By defult, jest will looking for files in __tests__ folder. Then, if you don1t put anything there, it's gonna fail.
