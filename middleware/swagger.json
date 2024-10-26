@@ -5,7 +5,7 @@
     "description": "Search through your favorite media with a simple to use REST API.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http"
@@ -34,12 +34,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -94,12 +89,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       }
     },
     "/movies/{id}": {
@@ -123,12 +113,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "put": {
         "tags": [
@@ -186,12 +171,7 @@
           "400": {
             "description": "Bad Request"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "delete": {
         "tags": [
@@ -213,12 +193,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       }
     },
     "/books/": {
@@ -234,12 +209,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -288,12 +258,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       }
     },
     "/books/{id}": {
@@ -320,12 +285,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "put": {
         "tags": [
@@ -383,12 +343,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "delete": {
         "tags": [
@@ -413,12 +368,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       }
     },
     "/music/": {
@@ -434,12 +384,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -482,12 +427,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       }
     },
     "/music/{id}": {
@@ -514,12 +454,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "put": {
         "tags": [
@@ -571,12 +506,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       },
       "delete": {
         "tags": [
@@ -601,12 +531,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
+        }
       }
     },
     "/games/": {
@@ -615,138 +540,38 @@
           "Games"
         ],
         "description": "",
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
-      },
-      "get": {
-        "tags": [
-          "Games"
-        ],
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
-      }
-    },
-    "/games/{id}": {
-      "get": {
-        "tags": [
-          "Games"
-        ],
-        "description": "",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "developer": {
+                  "example": "any"
+                },
+                "publisher": {
+                  "example": "any"
+                },
+                "platform": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Games"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Games"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "auth0": []
-          }
-        ]
-      }
-    },
-    "/games/": {
-      "post": {
-        "tags": [
-          "Games"
-        ],
-        "description": "",
         "responses": {
           "201": {
             "description": "Created"
@@ -808,6 +633,36 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "developer": {
+                  "example": "any"
+                },
+                "publisher": {
+                  "example": "any"
+                },
+                "platform": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
