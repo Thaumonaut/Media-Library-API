@@ -14,12 +14,11 @@ Content-Type: application/json
   "description": "A young wizard's journey begins.",
   "releaseYear": "1997",
   "pages": 309,
-  "ISBN10": "0439708184",
-  "ISBN13": "9780439708180"
+  "ISBN10": "0439708184"
 }
 
 ### update reader
-PUT http://localhost:3000/books/67012c02cda1c4f7d3287d41
+PUT http://localhost:3000/books/67103a99b10618d3cfd1cb6b
 Content-Type: application/json
 
 {
@@ -29,4 +28,4 @@ Content-Type: application/json
 }
 
 ### DELETE reader
-DELETE  http://localhost:3000/books/67012c02cda1c4f7d3287d41
+DELETE  http://localhost:3000/books/67103adfb10618d3cfd1cb70
