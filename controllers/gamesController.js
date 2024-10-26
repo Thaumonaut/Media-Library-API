@@ -3,6 +3,12 @@ const { validationResult } = require('express-validator');
  
 // Create a new game
 const createGame = async (req, res) => {
+    const { title, developer,
+    publisher,
+    platform,
+    rating,
+    genre,
+    description} = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
@@ -42,6 +48,12 @@ const getGameById = async (req, res) => {
  
 // Update a game by ID
 const updateGameById = async (req, res) => {
+    const { title, developer,
+        publisher,
+        platform,
+        rating,
+        genre,
+        description} = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
