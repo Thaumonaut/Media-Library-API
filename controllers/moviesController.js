@@ -4,6 +4,9 @@ const Movie = require('../database/movieSchema');
 const getMovies = async (req, res) => {
     try {
         const movies = await Movie.find();
+        if (!movies) {
+            return res.status(404).json({ message: 'Movies not found' });
+        }
         res.json(movies);    
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -14,6 +17,9 @@ const getMovies = async (req, res) => {
 const getSingleMovie = async (req, res) => {
     try {
         const movie = await Movie.findById(req.params.id);
+        if(!movie) {
+            return res.status(404).json({ message: 'Movie not found' });
+        }
         res.json(movie);
     } catch (err) {
         res.status(500).json({ message: err.message });
