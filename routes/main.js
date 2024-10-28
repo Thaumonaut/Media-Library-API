@@ -18,7 +18,11 @@ router.use("/api-docs", SwaggerUI.serve, SwaggerUI.setup(swagggerDocument))
 router.use(checkAuth);
 router.use(ErrorHandler);
 
-router.use('/movies', require('./movies')/*#swagger.tags=['Movies']*/)
+/*  */
+router.use('/movies', require('./movies')/*
+#swagger.tags=['Movies']
+#swagger.security=[{ "auth0": [] }]
+*/)
 
 router.use('/books', require('./books')/*#swagger.tags=['Books']*/)
 
